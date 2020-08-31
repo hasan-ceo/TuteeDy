@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Swahili, kiSwahili, Southeast Africa, Tanzania,  Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo, Language">
+    <meta name="description" content="Word Power Swahili is suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. It’s help you to communicate with locals for your daily activities. If you have any plan to give a visit to Southeast Africa, then it’s a good place to start.">
+    <meta name="google-site-verification" content="fK98567qTUYWgju2vN9B2921ZD6lupe6L59kLbQXPmI" />
+    @RenderSection("metatags", true)
+
+    <title>@ViewBag.Title - Word Power Swahili</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .navbar {
+            height: 80px;
+            background-color: blue;
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-68492638-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics   -->
+
+</head>
+<body style="background-color:black;margin:0px;padding:0px">
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=246107605737575";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <header>
+        <div class="container">
+            @*Top Header Start*@
+            <div class="row" style="background-color:#006666;height:80px;padding:20px">
+                <div class="col-md-12" style="color:gold">
+                    <h2 style="margin-top:3px">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <strong>Help to communicate in Swahili</strong>
+                    </h2>
+                </div>
+                <div class="col-md-offset-4 col-md-8 " style="padding:8px">
+
+                    <div class="row pull-right">
+                        @using (Html.BeginForm("Search", "Words", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false)
+
+
+                            <div class="col-md-24" style="margin-top:10px;text-align:center">
+                                @Html.TextBox("SearchString", "", new { @class = "input-lg", @placeholder = "Translate words into", @style = "font-size:2.25em;height:45px;text-align:center" })
+
+                            </div>
+
+                            <div class="col-md-24" style="margin-top:10px;text-align:center">
+                                <input type="submit" value="Swahili" class="btn btn-success btn-lg" name="SearchButton" id="Swahili" />
+                                <input type="submit" value="English" class="btn btn-danger btn-lg" name="SearchButton" id="English" />
+                            </div>
+
+                        }
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            @*Top Header End*@
+
+            @*Banner Start*@
+            <div class="row" style="background-image:url('../../images/background.jpg');background-position:center;background-repeat:no-repeat;background-color:#318ca7;">
+                <div class="col-md-16" style="padding:40px;margin-top:40px;">
+                    <div class="col-md-24">
+                        <img src="~/images/Phone.png" class="img-responsive center-block" alt="Phone" />
+                    </div>
+                    <div class="col-md-24" style="color:white;text-align:center">
+                        <h3>Suitable for tourist/expact visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo.</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-8" style="padding:40px;margin-top:40px;">
+
+                    <div class="col-md-24">
+                        <img class="img-responsive center-block" src="~/images/logo2.png" alt="Word Power Swahili" />
+                    </div>
+
+                    <div class="col-md-24" style="margin-top:30px;">
+                        <a href="https://play.google.com/store/apps/details?id=com.phonegap.wordpowerswahili" target="_blank" title="Download from Windows Store">
+                            <img class="img-responsive img-rounded center-block" src="~/images/en-play-badge.png" alt="Download from Windows Store" />
+                        </a>
+                    </div>
+                    <div class="col-md-24" style="margin-top:10px;">
+                        <a href="https://www.microsoft.com/en-us/store/apps/word-power-swahili/9nblggh0f8sr" style="text-align:center" target="_blank" title="Download from Windows Store">
+                            <img class="img-responsive img-rounded center-block" src="~/images/English-get-it-from-MS_InvariantCulture_Default.png" alt="Download from Windows Store" />
+                        </a>
+                    </div>
+
+
+                    <div class="col-md-24" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-offset-6 col-md-4">
+                                <a href="https://www.facebook.com/Word.Power.Swahili/" target="_blank" title="find us on facebook">
+                                    <img src="~/images/Facebook.png" alt="Facebook" class="img-responsive center-block" />
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="https://twitter.com/wpswahili" target="_blank" title="Follow us on Twitter">
+                                    <img src="~/images/Twitter.png" alt="Twitter" class="img-responsive center-block" />
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="https://www.instagram.com/wordpowerswahili/" target="_blank" title="Follow us on Instagram">
+                                    <img src="~/images/Instagram.png" alt="Instagram" class="img-responsive center-block" />
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            @*Banner End*@
+
+            @*Bootom Header Start*@
+            <div class="row" style="background-color:#ccffff;">
+                <div class="col-md-6" style="padding:10px">
+                    <div class="col-md-24">
+                        <img src="~/images/Present-icon.png" alt="" class="img-circle img-thumbnail center-block">
+                    </div>
+
+                    <div class="col-md-24" style="text-align:center">
+                        <h4>Wanna Help?</h4>
+                        <p style="white-space:pre-wrap;font-size :12px">Word Power Swahili is free tool, but if you would like to encourage its development please consider making a donation.</p>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="62TPXMXCHBNPE">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12" style="padding:10px">
+                    <div class="col-md-24" style="margin-top:30px;text-align:center; color:black">
+                        <ul class="nav">
+                            <li>
+                                <h4>
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    <strong>Help to communicate in Swahili</strong>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    <strong> English to Swahili Translation</strong>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    <strong> Swahili to English Translation</strong>
+                                </h4>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    @using (Html.BeginForm("Newjoin", "Newsletters", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="col-md-8">
+                            @Html.TextBox("Name", "", new { @class = "input-sm", @placeholder = "Enter name", @style = "width:100%" })
+
+                        </div>
+                        <div class="col-md-8">
+                            <input class="input-sm form-control" id="Email" name="Email" placeholder="Enter email" style="width:100%" value="" type="email">
+
+                            @*@Html.TextBox("Email", "", new { @class = "input-sm form-control", @placeholder = "Enter email", @style = "width:100%" })*@
+                        </div>
+
+                            <div class="col-md-8">
+                                <input type="submit" value="Get Newsletter" class="btn btn-success btn-sm" name="NewsletterButton" id="Newsletter" style="background-color:#003333; width:100%" />
+
+                            </div>
+
+                    }
+
+                </div>
+
+
+
+                <div class="col-md-6" style="padding:10px">
+
+                    <div class="col-md-offset-2 col-md-20" style="margin-top:50px">
+                        <img src="~/images/Books.png" alt="Top 32 Books on Swahili" class="img-responsive center-block" />
+                    </div>
+                    <div class="col-md-offset-2 col-md-20" style="margin-top:20px">
+                        <img src="~/images/Videos.png" alt="Top Videos on Swahili" class="img-responsive center-block" />
+                    </div>
+
+                </div>
+            </div>
+            @*Bootom Header End*@
+        </div>
+    </header>
+
+    <nav>...</nav>
+    <article>
+        <section>
+            ...
+        </section>
+    </article>
+    <aside>...</aside>
+
+
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p style="color :white">&copy; @DateTime.Now.Year - MansibSoft</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

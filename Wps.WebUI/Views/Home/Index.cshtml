@@ -1,0 +1,281 @@
+﻿@model Wps.WebUI.Models.HomePageView
+
+@section metatags
+{
+    <meta property="fb:app_id" content="233116304107113" />
+    <meta property="og:url" content="http://www.wordpowerswahili.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Word Power Swahili" />
+    <meta property="og:description" content="Word Power Swahili is suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. Our highly recommended Top 32 swahili learning books." />
+    <meta property="og:image" content="http://www.wordpowerswahili.org/images/banner.jpg" />
+    @*<meta property="og:image:type" content="image/jpeg" />*@
+    <meta property="og:image:width" content="1002" />
+    <meta property="og:image:height" content="535" />
+}
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+@*Banner Start*@
+
+<div class="row" style="margin:0px">
+    <div class="col-md-12 hidden-sm hidden-xs" style="background-color:#535676;height:750px">
+        <img src="~/images/LeftSlider.png" class="img-responsive center-block" />
+    </div>
+    <div class="col-md-12" style="background-color:#f59c81;height:750px">
+        <div class="col-md-24" style="padding-top:50px">
+            <img src="~/images/logo.png" class="img-responsive center-block" />
+        </div>
+
+        <div class="col-md-24" style="color:white;text-align:center;padding:20px">            
+            <h3>The largest online Swahili vocabulary guide, Suitable for tourist/expact visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo.</h3>
+        </div>
+       @* @Html.ActionLink("cont", "Index", "WordUsers", routeValues: null, htmlAttributes: new { @class = "btn btn-info btn-sm", @style = "Width:100%" })*@
+        <div class="col-md-24" style="margin-top:10px;">
+            <a href="http://www.wordpowerswahili.org/WordUsers/index" style="text-align:center"  title="Please contribute words to become a largest online Swahili vocabulary guide">
+                <img class="img-responsive img-rounded center-block" src="~/images/Contribution.png" alt="Please contribute words to become a largest online Swahili vocabulary guide" />
+            </a>
+        </div>
+
+        <div class="col-md-24" style="margin-top:10px;">         
+            <a href="https://play.google.com/store/apps/details?id=com.phonegap.wordpowerswahili" target="_blank" title="Download from Windows Store">
+                <img class="img-responsive img-rounded center-block" src="~/images/StoreAndroid.png" alt="Download from Windows Store" />
+            </a>
+        </div>
+
+        <div class="col-md-24" style="margin-top:10px;">
+            <a href="https://www.microsoft.com/en-us/store/apps/word-power-swahili/9nblggh0f8sr" style="text-align:center" target="_blank" title="Download from Windows Store">
+                <img class="img-responsive img-rounded center-block" src="~/images/StoreWindows.png" alt="Download from Windows Store" />
+            </a>
+        </div>
+
+        
+
+        <div class="col-md-offset-3 col-md-21 col-xs-offset-9 col-xs-15" style="margin-top:10px">
+            <div class="row">
+                <div class="col-md-offset-6 col-md-3 col-xs-3 col-sm-3">
+                    <a href="https://www.facebook.com/Word.Power.Swahili/" target="_blank" title="find us on facebook">
+                        <img src="~/images/Facebook.png" alt="Facebook" class="img-responsive center-block" />
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3">
+                    <a href="https://twitter.com/wpswahili" target="_blank" title="Follow us on Twitter">
+                        <img src="~/images/Twitter.png" alt="Twitter" class="img-responsive center-block" />
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3">
+                    <a href="https://www.instagram.com/wordpowerswahili/" target="_blank" title="Follow us on Instagram">
+                        <img src="~/images/Instagram.png" alt="Instagram" class="img-responsive center-block" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Banner End*@
+
+
+<div class="row" style="margin:0px;background-color:#f49d81">
+    <div class="col-md-6" style="background-color:#f49d81;padding-top:10px;padding-bottom:10px">
+        @foreach (var item in Model.Categories)
+        {
+            <div class="col-md-24">
+                @{ var sr = "~/images/" + @item.CategoryID + ".png";}
+                <a href="/words/list/@item.CategoryID" class="btn btn-danger" style="width:100%">
+                    <img src="@Url.Content(sr)" alt="@item.CategoryName" class="img-responsive pull-left">
+                    <h3 style="white-space:pre-wrap;"> @item.CategoryName</h3>
+                </a>
+            </div>
+                    }
+
+        <div class="col-md-24" style="margin-top:18px">
+            <a href="/Home/Books">  <img src="~/images/Books.png" alt="Top 32 Books on Swahili" class="img-thumbnail center-block " /></a>
+        </div>
+        <div class="col-md-24" style="margin-top:10px">
+            <a href="/Home/Videos">   <img src="~/images/Videos.png" alt="Top Videos on Swahili" class="img-thumbnail center-block" /></a>
+        </div>
+    </div>
+    <div class="col-md-18">
+        <div class="col-md-24" style="overflow: hidden;background-color:black">
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-9245786985241622"
+                 data-ad-slot="1862674373"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+        </div>
+
+
+        <div class="col-md-24" style="text-align:center;padding:10px"><h1>SYLLABLE SOUNDS</h1></div>
+
+        <div class="col-md-24">
+
+            <table class="table table-striped table-bordered table-responsive ">
+                <tr style="font-size:2em">
+                    <th>
+                        
+                    </th>
+                    <th>
+                        A
+                    </th>
+                    <th>
+                        E
+                    </th>
+                    <th>
+                        I
+                    </th>
+                    <th>
+                        O
+                    </th>
+                    <th>
+                        U
+                    </th>
+                    <th>
+                        Sound
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.SyllableSounds1)
+            {
+                    <tr style="font-size:1.5em">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cons)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.A)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.E)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.I)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.O)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.U)
+                        </td>
+                        <td>
+                            <audio controls preload="none" id="@item.SyllableSoundsId" style="width:100%">
+                                @{
+                                    var srcf = "~/sounds/SyllableSounds/" + item.SyllableSoundsId + ".mp3";
+
+                                    <source src=@Url.Content(srcf) type="video/mp4" />
+                                }
+                            </audio>
+
+                        </td>
+
+                    </tr>
+                                    }
+            </table>
+        </div>
+
+
+        <div class="col-md-24">
+            <div class="col-md-24" style="overflow: hidden;background-color:black">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-9245786985241622"
+                     data-ad-slot="2210869179"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+
+            </div>
+        </div>
+
+        <div class="col-md-24" style="text-align:center;padding:10px;"><h1>Syllables including letter “W”</h1></div>
+
+        <div class="col-md-24">
+            <table class="table table-striped table-bordered table-responsive" >
+                <tr style="font-size:2em">
+                    <th>
+                        
+                    </th>
+                    <th>
+                        A
+                    </th>
+                    <th>
+                        E
+                    </th>
+                    <th>
+                        I
+                    </th>
+
+                    <th>
+                        Sound
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.SyllableSounds2)
+            {
+                    <tr style="font-size:1.5em">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cons)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.A)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.E)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.I)
+                        </td>
+
+                        <td>
+                            <audio controls preload="none" id="@item.SyllableSoundsId" style="width:100%">
+                                @{
+                                    var srcf = "~/sounds/SyllableSounds/" + item.SyllableSoundsId + ".mp3";
+
+                                    <source src=@Url.Content(srcf) type="video/mp4" />
+                                }
+                            </audio>
+
+                        </td>
+
+                    </tr>
+                                    }
+            </table>
+        </div>
+
+        <div class="col-md-24">
+            <div class="col-md-24" style="overflow: hidden;background-color:black">
+
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- newgooglead3 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9245786985241622"
+                     data-ad-slot="2200875284"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>

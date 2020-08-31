@@ -1,0 +1,51 @@
+﻿@model Wps.Domain.Entities.Word
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Word</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Swahili)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Swahili)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sound)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sound)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WordID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

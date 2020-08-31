@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Swahili, kiSwahili, Southeast Africa, Tanzania,  Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo, Language">
+    <meta name="description" content="Word Power Swahili is suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. It’s help you to communicate with locals for your daily activities. If you have any plan to give a visit to Southeast Africa, then it’s a good place to start.">
+    <meta name="google-site-verification" content="fK98567qTUYWgju2vN9B2921ZD6lupe6L59kLbQXPmI" />
+    @RenderSection("metatags", true)
+
+    <title>@ViewBag.Title - Word Power Swahili</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .row.no-gutters {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+            .row.no-gutters > [class^="col-"],
+            .row.no-gutters > [class*=" col-"] {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+        .page-header {
+            padding-bottom: 9px;
+            margin: 5px 0 5px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .stylish-panel {
+            padding: 0px 0;
+            text-align: center;
+        }
+
+            .stylish-panel > div > div {
+                padding: 5px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                transition: 0.2s;
+            }
+
+            .stylish-panel > div:hover > div {
+                margin-top: -10px;
+                border: 1px solid rgb(200, 200, 200);
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+                background: rgba(200, 200, 200, 0.1);
+                transition: 0.5s;
+            }
+
+            .stylish-panel > div:hover img {
+                border-radius: 50%;
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+
+        .table-striped > tbody > tr:nth-child(odd) > td,
+        .table-striped > tbody > tr:nth-child(odd) > th {
+            background-color: lightgray;
+        }
+    </style>
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-68492638-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics   -->
+
+</head>
+<body style="background-image: url('../../images/night-sky-hd-wallpaper-2.jpg');">
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=246107605737575";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header" style="font-size: 2em">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Word Power Swahili", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:white">
+                    @*<li>@Html.ActionLink("Teachers", "Teachers", "Home")</li>*@
+
+                    <li><a href="/Home/Books"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Top 32 Books</a></li>
+                    <li>@*<a href="/Home/Music"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Music</a>*@</li>
+                    <li><a href="/Home/Videos"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Top Videos</a></li>
+                    @*<li>@Html.ActionLink("Movies", "Movies", "Home")</li>*@
+                    @* <li><a href="/NewsPapers/list"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> News Papers</a></li>*@
+                </ul>
+               @* @Html.Partial("_LoginPartial")*@
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid body-content" style="margin-top:2px;margin-bottom:10px">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="container">
+                    <div class="row">
+                        @using (Html.BeginForm("Search", "Words", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false)
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                @Html.TextBox("SearchString", "", new { @class = "input-lg", @placeholder = "Translate words into", @style = "width:100%" })
+
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input type="submit" value="Swahili" class="btn btn-success btn-lg" name="SearchButton" id="Swahili" />
+                                <input type="submit" value="English" class="btn btn-danger btn-lg" name="SearchButton" id="English" />
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-offset-3 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="container">
+
+                    <div class="row no-gutters" style="margin-top:10px">
+                        <div class="col-lg-offset-3 col-md-offset-3 col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                            <a href="https://play.google.com/store/apps/details?id=com.phonegap.wordpowerswahili" target="_blank" title="Download from Windows Store">
+                                <img class="img-responsive img-rounded" src="~/images/en-play-badge.png" alt="Download from Windows Store" />
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                            <a href="https://www.microsoft.com/en-us/store/apps/word-power-swahili/9nblggh0f8sr" style="text-align:center" target="_blank" title="Download from Windows Store">
+                                <img class="img-responsive img-rounded" src="~/images/English-get-it-from-MS_InvariantCulture_Default.png" alt="Download from Windows Store" />
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                            <div class="container">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <a href="https://www.facebook.com/Word.Power.Swahili/" target="_blank" title="find us on facebook">
+                                            <img src="~/images/square-facebook-128.png" alt="Facebook" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <a href="https://twitter.com/wpswahili" target="_blank" title="Follow us on Twitter">
+                                            <img src="~/images/twitter_letter-512.png" alt="Twitter" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                        <a href="https://www.instagram.com/wordpowerswahili/" target="_blank" title="Follow us on Instagram">
+                                            <img src="~/images/ig-badge-sprite-48@2x.png" alt="Instagram" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="container">
+                                <div class="row no-gutters">
+                                    @using (Html.BeginForm("Newjoin", "Newsletters", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            @Html.TextBox("Name", "", new { @class = "input-sm", @placeholder = "Enter name", @style = "width:100%" })
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <input class="input-sm form-control" id="Email" name="Email" placeholder="Enter email" style="width:100%" value="" type="email">
+
+                                            @*@Html.TextBox("Email", "", new { @class = "input-sm form-control", @placeholder = "Enter email", @style = "width:100%" })*@
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <input type="submit" value="Newsletter" class="btn btn-success btn-sm" name="NewsletterButton" id="Newsletter" style="width:100%" />
+
+                                        </div>
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p style="color :white">&copy; @DateTime.Now.Year - MansibSoft</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

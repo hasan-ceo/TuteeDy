@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE0QH0ZN1H"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TE0QH0ZN1H');
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9245786985241622",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Swahili, kiSwahili, Southeast Africa, Tanzania,  Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo, Language">
+    <meta name="description" content="Word Power Swahili is the largest online Swahili vocabulary guide, suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. It’s help you to communicate with locals for your daily activities. If you have any plan to give a visit to Southeast Africa, then it’s a good place to start.">
+
+    @RenderSection("metatags", true)
+
+    <title>Wordpowerswahili.org - The largest online Swahili vocabulary guide</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .navbar {
+            padding: 10px;
+            background-color: #535676;
+        }
+
+        .container-border {
+            border-top: 1px solid #EBEBEB;
+            border-left: 1px solid #EBEBEB;
+            border-right: 1px solid #EBEBEB;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        .btn-success {
+            color: #ffffff;
+            border-color: #a7a8b9;
+            background-color: #535676;
+        }
+    </style>
+
+
+    <meta name="google-site-verification" content="csfUQ0bRbZVlJJYaE-UPCkdG2638ZgNZkAuXKCSnlnU" />
+
+</head>
+<body style="background-color:#a7a8b9;">
+   
+
+   
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/">
+                    <img src="~/images/LogoHeader.png" class="img-responsive" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="visible-xs visible-sm hidden-md hidden-lg">
+                    @*<ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Setup", "Setup", "Menu")</li>
+                            <li>@Html.ActionLink("HR", "HR", "Menu")</li>
+                        </ul>*@
+                </div>
+                <div class="visible-lg visible-md hidden-xs hidden-sm">
+                    <div class="nav navbar-nav navbar-right">
+
+                        @using (Html.BeginForm("Search", "Words", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false)
+                            @Html.TextBox("SearchString", "", new { @class = "input-lg", @placeholder = "Translate words into", @style = "text-align:center" })
+                            <input type="submit" value="Swahili" class="btn btn-success btn-lg" name="SearchButton" id="Swahili" />
+                            <input type="submit" value="English" class="btn btn-success btn-lg" name="SearchButton" id="English" />
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container body-content" style="padding-top:13px">
+        @RenderBody()
+
+    </div>
+    @Html.Partial("Footer")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<ul class="nav navbar-nav navbar-right hidden-md hidden-sm hidden-xs">
+    <li>
+        @using (Html.BeginForm("Search", "Words", FormMethod.Post))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false )
+
+            <div class="form-group">
+                <div class="col-md-8">
+                    @Html.TextBox("SearchString","", new { @class = "css-class", @placeholder = "Find Words" } )              
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" value="Search" class="btn btn-success" name="SearchButton"/>
+                </div>
+            </div>
+
+        }
+    </li>
+</ul>

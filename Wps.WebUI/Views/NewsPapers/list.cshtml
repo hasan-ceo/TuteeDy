@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Wps.Domain.Entities.NewsPaper>
+@section metatags
+{
+    <meta property="og:url" content="http://www.wordpowerswahili.org/home/index" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Word Power Swahili" />
+    <meta property="og:description" content="Word Power Swahili is suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. It’s help you to communicate with locals for your daily activities. If you have any plan to give a visit to Southeast Africa, then it’s a good place to start." />
+    <meta property="og:image" content="http://www.wordpowerswahili.org/images/banner.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="960" />
+    <meta property="og:image:height" content="540" />
+}
+@{
+    ViewBag.Title = "list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron" style="background-color:#094ba2;color:white;padding:25px">
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <h1 style="color:white">Newspaper</h1>
+                <p class="lead">
+                    Some greate books on learning Swahili.
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="row stylish-panel">
+                    <div class="col-md-12">
+                        <div>
+
+                            <img src="~/images/Present-icon.png" alt="" class="img-circle img-thumbnail">
+                            <h4 style="white-space:pre-wrap;"> Wanna Help?</h4>
+                            <p style="white-space:pre-wrap;font-size :12px">Word Power Swahili is free tool, but if you would like to encourage its development please consider making a donation.</p>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="62TPXMXCHBNPE">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<style>
+    iframe {
+        width: 800px;
+        height: 520px;
+        border: none;
+        -moz-transform: scale(0.2);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.2);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.2);
+        -webkit-transform-origin: 0 0;
+    }
+</style>
+
+<div class="row no-gutters">
+    <div class="col-md-9">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <span>@item.Title</span>
+                        <iframe src="@item.SiteLink"></iframe>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_LoginRight")
+</div>
+
+

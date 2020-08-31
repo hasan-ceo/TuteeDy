@@ -1,0 +1,1691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A31B3136-40FC-49D0-A806-FA5D115B7710}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wps.WebUI</RootNamespace>
+    <AssemblyName>Wps.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.1.0.0\lib\net451\Microsoft.AspNetCore.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.1.0.0\lib\net451\Microsoft.AspNetCore.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Core.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Xml.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.1.0.0\lib\net451\Microsoft.AspNetCore.Routing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.1.0.0\lib\net451\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.InternalAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.InternalAbstractions.1.0.0\lib\net451\Microsoft.DotNet.InternalAbstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.1.0.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.1.0.0\lib\net451\Microsoft.Extensions.ObjectPool.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Options.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.PlatformAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.PlatformAbstractions.1.0.0\lib\net451\Microsoft.Extensions.PlatformAbstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.1.0.0\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.0.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\portable-net45+win8+wpa81\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewslettersController.cs" />
+    <Compile Include="Controllers\NewsPapersController.cs" />
+    <Compile Include="Controllers\DownApiController.cs" />
+    <Compile Include="Controllers\WordsApiController.cs" />
+    <Compile Include="Controllers\WordsController.cs" />
+    <Compile Include="Controllers\WordUsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HomePageView.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Wordsr.cs" />
+    <Compile Include="Models\viewWord.cs" />
+    <Compile Include="Models\WordSearchModel.cs" />
+    <Compile Include="Models\WordUsersViewModel.cs" />
+    <Compile Include="Models\WordViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-social.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\bx_loader.gif" />
+    <Content Include="Content\images\controls.png" />
+    <Content Include="Content\logo.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\aboutus.png" />
+    <Content Include="images\AdditionOfw.png" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\Books.png" />
+    <Content Include="images\Clothing.png" />
+    <Content Include="images\Color.png" />
+    <Content Include="images\CommonItem.png" />
+    <Content Include="images\Construction.png" />
+    <Content Include="images\ContinentsandEnvironment.png" />
+    <Content Include="images\Contribution.png" />
+    <Content Include="images\DayOfTheWeek.png" />
+    <Content Include="images\Directions.png" />
+    <Content Include="images\DomesticAnimals.png" />
+    <Content Include="images\Facebook.png" />
+    <Content Include="images\fbBooks.jpg" />
+    <Content Include="images\fbVideos.jpg" />
+    <Content Include="images\FoodstaffandFruits.png" />
+    <Content Include="images\Greetings.png" />
+    <Content Include="images\illness.png" />
+    <Content Include="images\Instagram.png" />
+    <Content Include="images\LeftSlider - Copy.png" />
+    <Content Include="images\LeftSlider.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\LogoHeader.png" />
+    <Content Include="images\MathematicalSigns.png" />
+    <Content Include="images\Months.png" />
+    <Content Include="images\Number.png" />
+    <Content Include="images\PartsoftheBody.png" />
+    <Content Include="images\People.png" />
+    <Content Include="images\Pests.png" />
+    <Content Include="images\Phone.png" />
+    <Content Include="images\Present-icon.png" />
+    <Content Include="images\SameSoundasInEnglish.png" />
+    <Content Include="images\Seasons.png" />
+    <Content Include="images\Signs.png" />
+    <Content Include="images\Someusefulexpressions.png" />
+    <Content Include="images\sound.png" />
+    <Content Include="images\Stationers.png" />
+    <Content Include="images\StoreAndroid.png" />
+    <Content Include="images\StoreWindows.png" />
+    <Content Include="images\Subjects.png" />
+    <Content Include="images\Time.png" />
+    <Content Include="images\Transportation.png" />
+    <Content Include="images\Twitter.png" />
+    <Content Include="images\TwoConsonantCombinations.png" />
+    <Content Include="images\UsefulWord.png" />
+    <Content Include="images\Verbs.png" />
+    <Content Include="images\Videos.png" />
+    <Content Include="images\WeightandMeasures.png" />
+    <Content Include="images\WildAnimal.png" />
+    <Content Include="images\Workers.png" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw1.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw10.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw11.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw12.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw13.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw14.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw15.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw16.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw17.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw18.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw19.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw2.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw20.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw21.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw22.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw23.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw24.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw25.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw26.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw27.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw28.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw29.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw3.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw30.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw31.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw32.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw33.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw34.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw35.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw36.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw37.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw38.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw39.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw4.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw40.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw41.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw42.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw43.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw44.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw45.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw46.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw47.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw48.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw5.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw6.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw7.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw8.mp3" />
+    <Content Include="sounds\AdditionOfw\AdditionOfw9.mp3" />
+    <Content Include="sounds\Clothing\Recording01.mp3" />
+    <Content Include="sounds\Clothing\Recording02.mp3" />
+    <Content Include="sounds\Clothing\Recording03.mp3" />
+    <Content Include="sounds\Clothing\Recording04.mp3" />
+    <Content Include="sounds\Clothing\Recording05.mp3" />
+    <Content Include="sounds\Clothing\Recording06.mp3" />
+    <Content Include="sounds\Clothing\Recording07.mp3" />
+    <Content Include="sounds\Clothing\Recording08.mp3" />
+    <Content Include="sounds\Clothing\Recording09.mp3" />
+    <Content Include="sounds\Clothing\Recording10.mp3" />
+    <Content Include="sounds\Clothing\Recording11.mp3" />
+    <Content Include="sounds\Clothing\Recording12.mp3" />
+    <Content Include="sounds\Clothing\Recording13.mp3" />
+    <Content Include="sounds\Color\Recording01.mp3" />
+    <Content Include="sounds\Color\Recording02.mp3" />
+    <Content Include="sounds\Color\Recording03.mp3" />
+    <Content Include="sounds\Color\Recording04.mp3" />
+    <Content Include="sounds\Color\Recording05.mp3" />
+    <Content Include="sounds\Color\Recording06.mp3" />
+    <Content Include="sounds\Color\Recording07.mp3" />
+    <Content Include="sounds\Color\Recording08.mp3" />
+    <Content Include="sounds\Color\Recording09.mp3" />
+    <Content Include="sounds\Color\Recording10.mp3" />
+    <Content Include="sounds\Color\Recording11.mp3" />
+    <Content Include="sounds\Color\Recording12.mp3" />
+    <Content Include="sounds\CommonItem\Recording01.mp3" />
+    <Content Include="sounds\CommonItem\Recording02.mp3" />
+    <Content Include="sounds\CommonItem\Recording03.mp3" />
+    <Content Include="sounds\CommonItem\Recording04.mp3" />
+    <Content Include="sounds\CommonItem\Recording05.mp3" />
+    <Content Include="sounds\CommonItem\Recording06.mp3" />
+    <Content Include="sounds\CommonItem\Recording07.mp3" />
+    <Content Include="sounds\CommonItem\Recording08.mp3" />
+    <Content Include="sounds\CommonItem\Recording09.mp3" />
+    <Content Include="sounds\CommonItem\Recording10.mp3" />
+    <Content Include="sounds\CommonItem\Recording11.mp3" />
+    <Content Include="sounds\CommonItem\Recording12.mp3" />
+    <Content Include="sounds\CommonItem\Recording13.mp3" />
+    <Content Include="sounds\CommonItem\Recording14.mp3" />
+    <Content Include="sounds\CommonItem\Recording15.mp3" />
+    <Content Include="sounds\CommonItem\Recording16.mp3" />
+    <Content Include="sounds\CommonItem\Recording17.mp3" />
+    <Content Include="sounds\CommonItem\Recording18.mp3" />
+    <Content Include="sounds\CommonItem\Recording19.mp3" />
+    <Content Include="sounds\CommonItem\Recording20.mp3" />
+    <Content Include="sounds\CommonItem\Recording21.mp3" />
+    <Content Include="sounds\CommonItem\Recording22.mp3" />
+    <Content Include="sounds\CommonItem\Recording23.mp3" />
+    <Content Include="sounds\CommonItem\Recording24.mp3" />
+    <Content Include="sounds\CommonItem\Recording25.mp3" />
+    <Content Include="sounds\CommonItem\Recording26.mp3" />
+    <Content Include="sounds\CommonItem\Recording27.mp3" />
+    <Content Include="sounds\CommonItem\Recording28.mp3" />
+    <Content Include="sounds\CommonItem\Recording29.mp3" />
+    <Content Include="sounds\CommonItem\Recording30.mp3" />
+    <Content Include="sounds\CommonItem\Recording31.mp3" />
+    <Content Include="sounds\CommonItem\Recording32.mp3" />
+    <Content Include="sounds\CommonItem\Recording33.mp3" />
+    <Content Include="sounds\CommonItem\Recording34.mp3" />
+    <Content Include="sounds\CommonItem\Recording35.mp3" />
+    <Content Include="sounds\CommonItem\Recording36.mp3" />
+    <Content Include="sounds\CommonItem\Recording37.mp3" />
+    <Content Include="sounds\CommonItem\Recording38.mp3" />
+    <Content Include="sounds\CommonItem\Recording39.mp3" />
+    <Content Include="sounds\CommonItem\Recording40.mp3" />
+    <Content Include="sounds\CommonItem\Recording41.mp3" />
+    <Content Include="sounds\CommonItem\Recording42.mp3" />
+    <Content Include="sounds\CommonItem\Recording43.mp3" />
+    <Content Include="sounds\CommonItem\Recording44.mp3" />
+    <Content Include="sounds\CommonItem\Recording45.mp3" />
+    <Content Include="sounds\CommonItem\Recording46.mp3" />
+    <Content Include="sounds\CommonItem\Recording47.mp3" />
+    <Content Include="sounds\Construction\Recording01.mp3" />
+    <Content Include="sounds\Construction\Recording02.mp3" />
+    <Content Include="sounds\Construction\Recording03.mp3" />
+    <Content Include="sounds\Construction\Recording04.mp3" />
+    <Content Include="sounds\Construction\Recording05.mp3" />
+    <Content Include="sounds\Construction\Recording06.mp3" />
+    <Content Include="sounds\Construction\Recording07.mp3" />
+    <Content Include="sounds\Construction\Recording08.mp3" />
+    <Content Include="sounds\Construction\Recording09.mp3" />
+    <Content Include="sounds\Construction\Recording10.mp3" />
+    <Content Include="sounds\Construction\Recording11.mp3" />
+    <Content Include="sounds\Construction\Recording12.mp3" />
+    <Content Include="sounds\Construction\Recording13.mp3" />
+    <Content Include="sounds\Construction\Recording14.mp3" />
+    <Content Include="sounds\Construction\Recording15.mp3" />
+    <Content Include="sounds\Construction\Recording16.mp3" />
+    <Content Include="sounds\Construction\Recording17.mp3" />
+    <Content Include="sounds\Construction\Recording18.mp3" />
+    <Content Include="sounds\Construction\Recording19.mp3" />
+    <Content Include="sounds\Construction\Recording20.mp3" />
+    <Content Include="sounds\Construction\Recording21.mp3" />
+    <Content Include="sounds\Construction\Recording22.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording01.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording02.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording03.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording04.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording05.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording06.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording07.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording08.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording09.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording10.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording11.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording12.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording13.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording14.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording15.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording16.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording17.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording18.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording19.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording20.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording21.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording22.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording23.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording24.mp3" />
+    <Content Include="sounds\ContinentsandEnvironment\Recording25.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording01.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording02.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording03.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording04.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording05.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording06.mp3" />
+    <Content Include="sounds\DayOfTheWeek\Recording07.mp3" />
+    <Content Include="sounds\Directions\Recording01.mp3" />
+    <Content Include="sounds\Directions\Recording02.mp3" />
+    <Content Include="sounds\Directions\Recording03.mp3" />
+    <Content Include="sounds\Directions\Recording04.mp3" />
+    <Content Include="sounds\Directions\Recording05.mp3" />
+    <Content Include="sounds\Directions\Recording06.mp3" />
+    <Content Include="sounds\Directions\Recording07.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording01.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording02.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording03.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording04.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording05.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording06.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording07.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording08.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording09.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording10.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording11.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording12.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording13.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording14.mp3" />
+    <Content Include="sounds\DomesticAnimals\Recording15.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording01.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording02.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording03.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording04.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording05.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording06.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording07.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording08.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording09.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording10.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording11.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording12.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording13.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording14.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording15.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording16.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording17.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording18.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording19.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording20.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording21.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording22.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording23.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording24.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording25.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording26.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording27.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording28.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording29.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording30.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording31.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording32.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording33.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording34.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording35.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording36.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording37.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording38.mp3" />
+    <Content Include="sounds\FoodstaffandFruits\Recording39.mp3" />
+    <Content Include="sounds\Greetings\Recording01.mp3" />
+    <Content Include="sounds\Greetings\Recording02.mp3" />
+    <Content Include="sounds\Greetings\Recording03.mp3" />
+    <Content Include="sounds\Greetings\Recording04.mp3" />
+    <Content Include="sounds\Greetings\Recording05.mp3" />
+    <Content Include="sounds\Greetings\Recording06.mp3" />
+    <Content Include="sounds\Greetings\Recording07.mp3" />
+    <Content Include="sounds\Greetings\Recording08.mp3" />
+    <Content Include="sounds\Greetings\Recording09.mp3" />
+    <Content Include="sounds\Greetings\Recording10.mp3" />
+    <Content Include="sounds\Greetings\Recording11.mp3" />
+    <Content Include="sounds\Greetings\Recording12.mp3" />
+    <Content Include="sounds\Greetings\Recording13.mp3" />
+    <Content Include="sounds\Greetings\Recording14.mp3" />
+    <Content Include="sounds\Illness\Recording01.mp3" />
+    <Content Include="sounds\Illness\Recording02.mp3" />
+    <Content Include="sounds\Illness\Recording03.mp3" />
+    <Content Include="sounds\Illness\Recording04.mp3" />
+    <Content Include="sounds\Illness\Recording05.mp3" />
+    <Content Include="sounds\Illness\Recording06.mp3" />
+    <Content Include="sounds\Illness\Recording07.mp3" />
+    <Content Include="sounds\Illness\Recording08.mp3" />
+    <Content Include="sounds\Illness\Recording09.mp3" />
+    <Content Include="sounds\Illness\Recording10.mp3" />
+    <Content Include="sounds\Illness\Recording11.mp3" />
+    <Content Include="sounds\Illness\Recording12.mp3" />
+    <Content Include="sounds\Illness\Recording13.mp3" />
+    <Content Include="sounds\Illness\Recording14.mp3" />
+    <Content Include="sounds\Illness\Recording15.mp3" />
+    <Content Include="sounds\Illness\Recording16.mp3" />
+    <Content Include="sounds\Illness\Recording17.mp3" />
+    <Content Include="sounds\Illness\Recording18.mp3" />
+    <Content Include="sounds\Illness\Recording19.mp3" />
+    <Content Include="sounds\Illness\Recording20.mp3" />
+    <Content Include="sounds\MathematicalSigns\Recording01.mp3" />
+    <Content Include="sounds\MathematicalSigns\Recording02.mp3" />
+    <Content Include="sounds\MathematicalSigns\Recording03.mp3" />
+    <Content Include="sounds\MathematicalSigns\Recording04.mp3" />
+    <Content Include="sounds\MathematicalSigns\Recording05.mp3" />
+    <Content Include="sounds\menu\Recording01.mp3" />
+    <Content Include="sounds\menu\Recording02.mp3" />
+    <Content Include="sounds\menu\Recording03.mp3" />
+    <Content Include="sounds\menu\Recording04.mp3" />
+    <Content Include="sounds\menu\Recording05.mp3" />
+    <Content Include="sounds\menu\Recording06.mp3" />
+    <Content Include="sounds\menu\Recording07.mp3" />
+    <Content Include="sounds\menu\Recording08.mp3" />
+    <Content Include="sounds\menu\Recording09.mp3" />
+    <Content Include="sounds\menu\Recording10.mp3" />
+    <Content Include="sounds\menu\Recording11.mp3" />
+    <Content Include="sounds\menu\Recording12.mp3" />
+    <Content Include="sounds\menu\Recording13.mp3" />
+    <Content Include="sounds\menu\Recording14.mp3" />
+    <Content Include="sounds\menu\Recording15.mp3" />
+    <Content Include="sounds\menu\Recording16.mp3" />
+    <Content Include="sounds\menu\Recording17.mp3" />
+    <Content Include="sounds\menu\Recording18.mp3" />
+    <Content Include="sounds\menu\Recording19.mp3" />
+    <Content Include="sounds\menu\Recording20.mp3" />
+    <Content Include="sounds\menu\Recording21.mp3" />
+    <Content Include="sounds\menu\Recording22.mp3" />
+    <Content Include="sounds\menu\Recording23.mp3" />
+    <Content Include="sounds\menu\Recording24.mp3" />
+    <Content Include="sounds\menu\Recording25.mp3" />
+    <Content Include="sounds\menu\Recording26.mp3" />
+    <Content Include="sounds\menu\Recording27.mp3" />
+    <Content Include="sounds\menu\Recording28.mp3" />
+    <Content Include="sounds\menu\Recording29.mp3" />
+    <Content Include="sounds\Months\Recording01.mp3" />
+    <Content Include="sounds\Months\Recording02.mp3" />
+    <Content Include="sounds\Months\Recording03.mp3" />
+    <Content Include="sounds\Months\Recording04.mp3" />
+    <Content Include="sounds\Months\Recording05.mp3" />
+    <Content Include="sounds\Months\Recording06.mp3" />
+    <Content Include="sounds\Months\Recording07.mp3" />
+    <Content Include="sounds\Months\Recording08.mp3" />
+    <Content Include="sounds\Months\Recording09.mp3" />
+    <Content Include="sounds\Months\Recording10.mp3" />
+    <Content Include="sounds\Months\Recording11.mp3" />
+    <Content Include="sounds\Months\Recording12.mp3" />
+    <Content Include="sounds\Months\Recording13.mp3" />
+    <Content Include="sounds\Months\Recording14.mp3" />
+    <Content Include="sounds\Months\Recording15.mp3" />
+    <Content Include="sounds\Months\Recording16.mp3" />
+    <Content Include="sounds\Months\Recording17.mp3" />
+    <Content Include="sounds\Months\Recording18.mp3" />
+    <Content Include="sounds\Months\Recording19.mp3" />
+    <Content Include="sounds\Months\Recording20.mp3" />
+    <Content Include="sounds\Months\Recording21.mp3" />
+    <Content Include="sounds\Months\Recording22.mp3" />
+    <Content Include="sounds\Months\Recording23.mp3" />
+    <Content Include="sounds\Months\Recording24.mp3" />
+    <Content Include="sounds\Number\Recording00.mp3" />
+    <Content Include="sounds\Number\Recording01.mp3" />
+    <Content Include="sounds\Number\Recording02.mp3" />
+    <Content Include="sounds\Number\Recording03.mp3" />
+    <Content Include="sounds\Number\Recording04.mp3" />
+    <Content Include="sounds\Number\Recording05.mp3" />
+    <Content Include="sounds\Number\Recording06.mp3" />
+    <Content Include="sounds\Number\Recording07.mp3" />
+    <Content Include="sounds\Number\Recording08.mp3" />
+    <Content Include="sounds\Number\Recording09.mp3" />
+    <Content Include="sounds\Number\Recording10.mp3" />
+    <Content Include="sounds\Number\Recording100.mp3" />
+    <Content Include="sounds\Number\Recording101.mp3" />
+    <Content Include="sounds\Number\Recording102.mp3" />
+    <Content Include="sounds\Number\Recording103.mp3" />
+    <Content Include="sounds\Number\Recording104.mp3" />
+    <Content Include="sounds\Number\Recording105.mp3" />
+    <Content Include="sounds\Number\Recording106.mp3" />
+    <Content Include="sounds\Number\Recording107.mp3" />
+    <Content Include="sounds\Number\Recording11.mp3" />
+    <Content Include="sounds\Number\Recording12.mp3" />
+    <Content Include="sounds\Number\Recording13.mp3" />
+    <Content Include="sounds\Number\Recording14.mp3" />
+    <Content Include="sounds\Number\Recording15.mp3" />
+    <Content Include="sounds\Number\Recording16.mp3" />
+    <Content Include="sounds\Number\Recording17.mp3" />
+    <Content Include="sounds\Number\Recording18.mp3" />
+    <Content Include="sounds\Number\Recording19.mp3" />
+    <Content Include="sounds\Number\Recording20.mp3" />
+    <Content Include="sounds\Number\Recording21.mp3" />
+    <Content Include="sounds\Number\Recording22.mp3" />
+    <Content Include="sounds\Number\Recording23.mp3" />
+    <Content Include="sounds\Number\Recording24.mp3" />
+    <Content Include="sounds\Number\Recording25.mp3" />
+    <Content Include="sounds\Number\Recording26.mp3" />
+    <Content Include="sounds\Number\Recording27.mp3" />
+    <Content Include="sounds\Number\Recording28.mp3" />
+    <Content Include="sounds\Number\Recording29.mp3" />
+    <Content Include="sounds\Number\Recording30.mp3" />
+    <Content Include="sounds\Number\Recording31.mp3" />
+    <Content Include="sounds\Number\Recording32.mp3" />
+    <Content Include="sounds\Number\Recording33.mp3" />
+    <Content Include="sounds\Number\Recording34.mp3" />
+    <Content Include="sounds\Number\Recording35.mp3" />
+    <Content Include="sounds\Number\Recording36.mp3" />
+    <Content Include="sounds\Number\Recording37.mp3" />
+    <Content Include="sounds\Number\Recording38.mp3" />
+    <Content Include="sounds\Number\Recording39.mp3" />
+    <Content Include="sounds\Number\Recording40.mp3" />
+    <Content Include="sounds\Number\Recording41.mp3" />
+    <Content Include="sounds\Number\Recording42.mp3" />
+    <Content Include="sounds\Number\Recording43.mp3" />
+    <Content Include="sounds\Number\Recording44.mp3" />
+    <Content Include="sounds\Number\Recording45.mp3" />
+    <Content Include="sounds\Number\Recording46.mp3" />
+    <Content Include="sounds\Number\Recording47.mp3" />
+    <Content Include="sounds\Number\Recording48.mp3" />
+    <Content Include="sounds\Number\Recording49.mp3" />
+    <Content Include="sounds\Number\Recording50.mp3" />
+    <Content Include="sounds\Number\Recording51.mp3" />
+    <Content Include="sounds\Number\Recording52.mp3" />
+    <Content Include="sounds\Number\Recording53.mp3" />
+    <Content Include="sounds\Number\Recording54.mp3" />
+    <Content Include="sounds\Number\Recording55.mp3" />
+    <Content Include="sounds\Number\Recording56.mp3" />
+    <Content Include="sounds\Number\Recording57.mp3" />
+    <Content Include="sounds\Number\Recording58.mp3" />
+    <Content Include="sounds\Number\Recording59.mp3" />
+    <Content Include="sounds\Number\Recording60.mp3" />
+    <Content Include="sounds\Number\Recording61.mp3" />
+    <Content Include="sounds\Number\Recording62.mp3" />
+    <Content Include="sounds\Number\Recording63.mp3" />
+    <Content Include="sounds\Number\Recording64.mp3" />
+    <Content Include="sounds\Number\Recording65.mp3" />
+    <Content Include="sounds\Number\Recording66.mp3" />
+    <Content Include="sounds\Number\Recording67.mp3" />
+    <Content Include="sounds\Number\Recording68.mp3" />
+    <Content Include="sounds\Number\Recording69.mp3" />
+    <Content Include="sounds\Number\Recording70.mp3" />
+    <Content Include="sounds\Number\Recording71.mp3" />
+    <Content Include="sounds\Number\Recording72.mp3" />
+    <Content Include="sounds\Number\Recording73.mp3" />
+    <Content Include="sounds\Number\Recording74.mp3" />
+    <Content Include="sounds\Number\Recording75.mp3" />
+    <Content Include="sounds\Number\Recording76.mp3" />
+    <Content Include="sounds\Number\Recording77.mp3" />
+    <Content Include="sounds\Number\Recording78.mp3" />
+    <Content Include="sounds\Number\Recording79.mp3" />
+    <Content Include="sounds\Number\Recording80.mp3" />
+    <Content Include="sounds\Number\Recording81.mp3" />
+    <Content Include="sounds\Number\Recording82.mp3" />
+    <Content Include="sounds\Number\Recording83.mp3" />
+    <Content Include="sounds\Number\Recording84.mp3" />
+    <Content Include="sounds\Number\Recording85.mp3" />
+    <Content Include="sounds\Number\Recording86.mp3" />
+    <Content Include="sounds\Number\Recording87.mp3" />
+    <Content Include="sounds\Number\Recording88.mp3" />
+    <Content Include="sounds\Number\Recording89.mp3" />
+    <Content Include="sounds\Number\Recording90.mp3" />
+    <Content Include="sounds\Number\Recording91.mp3" />
+    <Content Include="sounds\Number\Recording92.mp3" />
+    <Content Include="sounds\Number\Recording93.mp3" />
+    <Content Include="sounds\Number\Recording94.mp3" />
+    <Content Include="sounds\Number\Recording95.mp3" />
+    <Content Include="sounds\Number\Recording96.mp3" />
+    <Content Include="sounds\Number\Recording97.mp3" />
+    <Content Include="sounds\Number\Recording98.mp3" />
+    <Content Include="sounds\Number\Recording99.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording01.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording02.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording03.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording04.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording05.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording06.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording07.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording08.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording09.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording10.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording11.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording12.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording13.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording14.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording15.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording16.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording17.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording18.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording19.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording20.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording21.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording22.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording23.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording24.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording25.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording26.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording27.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording28.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording29.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording30.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording31.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording32.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording33.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording34.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording35.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording36.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording37.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording38.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording39.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording40.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording41.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording42.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording43.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording44.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording45.mp3" />
+    <Content Include="sounds\PartsoftheBody\Recording46.mp3" />
+    <Content Include="sounds\People\Recording01.mp3" />
+    <Content Include="sounds\People\Recording02.mp3" />
+    <Content Include="sounds\People\Recording03.mp3" />
+    <Content Include="sounds\People\Recording04.mp3" />
+    <Content Include="sounds\People\Recording05.mp3" />
+    <Content Include="sounds\People\Recording06.mp3" />
+    <Content Include="sounds\People\Recording07.mp3" />
+    <Content Include="sounds\People\Recording08.mp3" />
+    <Content Include="sounds\People\Recording09.mp3" />
+    <Content Include="sounds\People\Recording10.mp3" />
+    <Content Include="sounds\People\Recording11.mp3" />
+    <Content Include="sounds\People\Recording12.mp3" />
+    <Content Include="sounds\People\Recording13.mp3" />
+    <Content Include="sounds\People\Recording14.mp3" />
+    <Content Include="sounds\People\Recording15.mp3" />
+    <Content Include="sounds\People\Recording16.mp3" />
+    <Content Include="sounds\People\Recording17.mp3" />
+    <Content Include="sounds\People\Recording18.mp3" />
+    <Content Include="sounds\People\Recording19.mp3" />
+    <Content Include="sounds\People\Recording20.mp3" />
+    <Content Include="sounds\People\Recording21.mp3" />
+    <Content Include="sounds\People\Recording22.mp3" />
+    <Content Include="sounds\People\Recording23.mp3" />
+    <Content Include="sounds\People\Recording24.mp3" />
+    <Content Include="sounds\People\Recording25.mp3" />
+    <Content Include="sounds\People\Recording26.mp3" />
+    <Content Include="sounds\People\Recording27.mp3" />
+    <Content Include="sounds\People\Recording28.mp3" />
+    <Content Include="sounds\People\Recording29.mp3" />
+    <Content Include="sounds\Pests\Recording01.mp3" />
+    <Content Include="sounds\Pests\Recording02.mp3" />
+    <Content Include="sounds\Pests\Recording03.mp3" />
+    <Content Include="sounds\Pests\Recording04.mp3" />
+    <Content Include="sounds\Pests\Recording05.mp3" />
+    <Content Include="sounds\Pests\Recording06.mp3" />
+    <Content Include="sounds\Pests\Recording07.mp3" />
+    <Content Include="sounds\Pests\Recording08.mp3" />
+    <Content Include="sounds\Politics\Recording01.mp3" />
+    <Content Include="sounds\Politics\Recording02.mp3" />
+    <Content Include="sounds\Politics\Recording03.mp3" />
+    <Content Include="sounds\Politics\Recording04.mp3" />
+    <Content Include="sounds\Politics\Recording05.mp3" />
+    <Content Include="sounds\Politics\Recording06.mp3" />
+    <Content Include="sounds\Politics\Recording07.mp3" />
+    <Content Include="sounds\Politics\Recording08.mp3" />
+    <Content Include="sounds\Politics\Recording09.mp3" />
+    <Content Include="sounds\Politics\Recording10.mp3" />
+    <Content Include="sounds\Politics\Recording11.mp3" />
+    <Content Include="sounds\Politics\Recording12.mp3" />
+    <Content Include="sounds\Politics\Recording13.mp3" />
+    <Content Include="sounds\Politics\Recording14.mp3" />
+    <Content Include="sounds\Politics\Recording15.mp3" />
+    <Content Include="sounds\Politics\Recording16.mp3" />
+    <Content Include="sounds\Politics\Recording17.mp3" />
+    <Content Include="sounds\Politics\Recording18.mp3" />
+    <Content Include="sounds\Politics\Recording19.mp3" />
+    <Content Include="sounds\Politics\Recording20.mp3" />
+    <Content Include="sounds\Politics\Recording21.mp3" />
+    <Content Include="sounds\Politics\Recording22.mp3" />
+    <Content Include="sounds\Politics\Recording23.mp3" />
+    <Content Include="sounds\Politics\Recording24.mp3" />
+    <Content Include="sounds\Politics\Recording25.mp3" />
+    <Content Include="sounds\Politics\Recording26.mp3" />
+    <Content Include="sounds\Politics\Recording27.mp3" />
+    <Content Include="sounds\Politics\Recording28.mp3" />
+    <Content Include="sounds\Politics\Recording29.mp3" />
+    <Content Include="sounds\Politics\Recording30.mp3" />
+    <Content Include="sounds\Politics\Recording31.mp3" />
+    <Content Include="sounds\Politics\Recording32.mp3" />
+    <Content Include="sounds\Politics\Recording33.mp3" />
+    <Content Include="sounds\Politics\Recording34.mp3" />
+    <Content Include="sounds\Politics\Recording35.mp3" />
+    <Content Include="sounds\Politics\Recording36.mp3" />
+    <Content Include="sounds\Politics\Recording37.mp3" />
+    <Content Include="sounds\Politics\Recording38.mp3" />
+    <Content Include="sounds\Politics\Recording39.mp3" />
+    <Content Include="sounds\Politics\Recording40.mp3" />
+    <Content Include="sounds\Politics\Recording41.mp3" />
+    <Content Include="sounds\Politics\Recording42.mp3" />
+    <Content Include="sounds\Politics\Recording43.mp3" />
+    <Content Include="sounds\Politics\Recording44.mp3" />
+    <Content Include="sounds\Politics\Recording45.mp3" />
+    <Content Include="sounds\Politics\Recording46.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish483.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish484.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish485.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish486.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish487.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish488.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish489.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish490.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish491.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish492.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish493.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish494.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish495.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish496.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish497.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish498.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish499.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish500.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish501.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish502.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish503.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish504.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish505.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish506.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish507.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish508.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish509.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish510.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish511.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish512.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish513.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish514.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish515.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish516.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish517.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish518.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish519.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish520.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish521.mp3" />
+    <Content Include="sounds\SameSoundasInEnglish\SameSoundasInEnglish522.mp3" />
+    <Content Include="sounds\Seasons\Recording01.mp3" />
+    <Content Include="sounds\Seasons\Recording02.mp3" />
+    <Content Include="sounds\Seasons\Recording03.mp3" />
+    <Content Include="sounds\Seasons\Recording04.mp3" />
+    <Content Include="sounds\Seasons\Recording05.mp3" />
+    <Content Include="sounds\Seasons\Recording06.mp3" />
+    <Content Include="sounds\Shapes\Recording01.mp3" />
+    <Content Include="sounds\Shapes\Recording02.mp3" />
+    <Content Include="sounds\Shapes\Recording03.mp3" />
+    <Content Include="sounds\Shapes\Recording04.mp3" />
+    <Content Include="sounds\Shapes\Recording05.mp3" />
+    <Content Include="sounds\Shapes\Recording06.mp3" />
+    <Content Include="sounds\Shapes\Recording07.mp3" />
+    <Content Include="sounds\Shapes\Recording08.mp3" />
+    <Content Include="sounds\Shapes\Recording09.mp3" />
+    <Content Include="sounds\Shapes\Recording10.mp3" />
+    <Content Include="sounds\Shapes\Recording11.mp3" />
+    <Content Include="sounds\Shapes\Recording12.mp3" />
+    <Content Include="sounds\Shapes\Recording13.mp3" />
+    <Content Include="sounds\Signs\Recording01.mp3" />
+    <Content Include="sounds\Signs\Recording02.mp3" />
+    <Content Include="sounds\Signs\Recording03.mp3" />
+    <Content Include="sounds\Signs\Recording04.mp3" />
+    <Content Include="sounds\Signs\Recording05.mp3" />
+    <Content Include="sounds\Signs\Recording06.mp3" />
+    <Content Include="sounds\Signs\Recording07.mp3" />
+    <Content Include="sounds\Signs\Recording08.mp3" />
+    <Content Include="sounds\Signs\Recording09.mp3" />
+    <Content Include="sounds\Signs\Recording10.mp3" />
+    <Content Include="sounds\Signs\Recording11.mp3" />
+    <Content Include="sounds\Signs\Recording12.mp3" />
+    <Content Include="sounds\Signs\Recording13.mp3" />
+    <Content Include="sounds\Signs\Recording14.mp3" />
+    <Content Include="sounds\Signs\Recording15.mp3" />
+    <Content Include="sounds\Signs\Recording16.mp3" />
+    <Content Include="sounds\Signs\Recording17.mp3" />
+    <Content Include="sounds\Signs\Recording18.mp3" />
+    <Content Include="sounds\Signs\Recording19.mp3" />
+    <Content Include="sounds\Signs\Recording20.mp3" />
+    <Content Include="sounds\Signs\Recording21.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording01.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording02.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording03.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording04.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording05.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording06.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording07.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording08.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording09.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording10.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording11.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording12.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording13.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording14.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording15.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording16.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording17.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording18.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording19.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording20.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording21.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording22.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording23.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording24.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording25.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording26.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording27.mp3" />
+    <Content Include="sounds\Someusefulexpressions\Recording28.mp3" />
+    <Content Include="sounds\Stationers\Recording01.mp3" />
+    <Content Include="sounds\Stationers\Recording02.mp3" />
+    <Content Include="sounds\Stationers\Recording03.mp3" />
+    <Content Include="sounds\Stationers\Recording04.mp3" />
+    <Content Include="sounds\Stationers\Recording05.mp3" />
+    <Content Include="sounds\Stationers\Recording06.mp3" />
+    <Content Include="sounds\Stationers\Recording07.mp3" />
+    <Content Include="sounds\Stationers\Recording08.mp3" />
+    <Content Include="sounds\Stationers\Recording09.mp3" />
+    <Content Include="sounds\Stationers\Recording10.mp3" />
+    <Content Include="sounds\Stationers\Recording11.mp3" />
+    <Content Include="sounds\Stationers\Recording12.mp3" />
+    <Content Include="sounds\Subjects\Recording01.mp3" />
+    <Content Include="sounds\Subjects\Recording02.mp3" />
+    <Content Include="sounds\Subjects\Recording03.mp3" />
+    <Content Include="sounds\Subjects\Recording04.mp3" />
+    <Content Include="sounds\Subjects\Recording05.mp3" />
+    <Content Include="sounds\Subjects\Recording06.mp3" />
+    <Content Include="sounds\Subjects\Recording07.mp3" />
+    <Content Include="sounds\Subjects\Recording08.mp3" />
+    <Content Include="sounds\Subjects\Recording09.mp3" />
+    <Content Include="sounds\Subjects\Recording10.mp3" />
+    <Content Include="sounds\SyllableSounds\s01.mp3" />
+    <Content Include="sounds\SyllableSounds\s02.mp3" />
+    <Content Include="sounds\SyllableSounds\s03.mp3" />
+    <Content Include="sounds\SyllableSounds\s04.mp3" />
+    <Content Include="sounds\SyllableSounds\s05.mp3" />
+    <Content Include="sounds\SyllableSounds\s06.mp3" />
+    <Content Include="sounds\SyllableSounds\s07.mp3" />
+    <Content Include="sounds\SyllableSounds\s08.mp3" />
+    <Content Include="sounds\SyllableSounds\s09.mp3" />
+    <Content Include="sounds\SyllableSounds\s10.mp3" />
+    <Content Include="sounds\SyllableSounds\s11.mp3" />
+    <Content Include="sounds\SyllableSounds\s12.mp3" />
+    <Content Include="sounds\SyllableSounds\s13.mp3" />
+    <Content Include="sounds\SyllableSounds\s14.mp3" />
+    <Content Include="sounds\SyllableSounds\s15.mp3" />
+    <Content Include="sounds\SyllableSounds\s16.mp3" />
+    <Content Include="sounds\SyllableSounds\s17.mp3" />
+    <Content Include="sounds\SyllableSounds\s18.mp3" />
+    <Content Include="sounds\SyllableSounds\s19.mp3" />
+    <Content Include="sounds\SyllableSounds\s20.mp3" />
+    <Content Include="sounds\SyllableSounds\s21.mp3" />
+    <Content Include="sounds\SyllableSounds\s22.mp3" />
+    <Content Include="sounds\SyllableSounds\s23.mp3" />
+    <Content Include="sounds\SyllableSounds\s24.mp3" />
+    <Content Include="sounds\SyllableSounds\s25.mp3" />
+    <Content Include="sounds\SyllableSounds\s26.mp3" />
+    <Content Include="sounds\SyllableSounds\s27.mp3" />
+    <Content Include="sounds\SyllableSounds\s28.mp3" />
+    <Content Include="sounds\SyllableSounds\s29.mp3" />
+    <Content Include="sounds\SyllableSounds\s30.mp3" />
+    <Content Include="sounds\SyllableSounds\s31.mp3" />
+    <Content Include="sounds\SyllableSounds\s32.mp3" />
+    <Content Include="sounds\SyllableSounds\s33.mp3" />
+    <Content Include="sounds\SyllableSounds\s34.mp3" />
+    <Content Include="sounds\SyllableSounds\s35.mp3" />
+    <Content Include="sounds\SyllableSounds\s36.mp3" />
+    <Content Include="sounds\SyllableSounds\s37.mp3" />
+    <Content Include="sounds\SyllableSounds\s38.mp3" />
+    <Content Include="sounds\SyllableSounds\s39.mp3" />
+    <Content Include="sounds\SyllableSounds\s40.mp3" />
+    <Content Include="sounds\SyllableSounds\s41.mp3" />
+    <Content Include="sounds\SyllableSounds\s42.mp3" />
+    <Content Include="sounds\SyllableSounds\s43.mp3" />
+    <Content Include="sounds\SyllableSounds\s44.mp3" />
+    <Content Include="sounds\SyllableSounds\s45.mp3" />
+    <Content Include="sounds\SyllableSounds\s46.mp3" />
+    <Content Include="sounds\SyllableSounds\s47.mp3" />
+    <Content Include="sounds\SyllableSounds\s48.mp3" />
+    <Content Include="sounds\Time\Recording01.mp3" />
+    <Content Include="sounds\Time\Recording02.mp3" />
+    <Content Include="sounds\Time\Recording03.mp3" />
+    <Content Include="sounds\Time\Recording04.mp3" />
+    <Content Include="sounds\Time\Recording05.mp3" />
+    <Content Include="sounds\Time\Recording06.mp3" />
+    <Content Include="sounds\Time\Recording07.mp3" />
+    <Content Include="sounds\Time\Recording08.mp3" />
+    <Content Include="sounds\Time\Recording09.mp3" />
+    <Content Include="sounds\Time\Recording10.mp3" />
+    <Content Include="sounds\Time\Recording11.mp3" />
+    <Content Include="sounds\Time\Recording12.mp3" />
+    <Content Include="sounds\Time\Recording13.mp3" />
+    <Content Include="sounds\Time\Recording14.mp3" />
+    <Content Include="sounds\Time\Recording15.mp3" />
+    <Content Include="sounds\Time\Recording16.mp3" />
+    <Content Include="sounds\Time\Recording17.mp3" />
+    <Content Include="sounds\Time\Recording18.mp3" />
+    <Content Include="sounds\Time\Recording19.mp3" />
+    <Content Include="sounds\Time\Recording20.mp3" />
+    <Content Include="sounds\Time\Recording21.mp3" />
+    <Content Include="sounds\Time\Recording22.mp3" />
+    <Content Include="sounds\Time\Recording23.mp3" />
+    <Content Include="sounds\Time\Recording24.mp3" />
+    <Content Include="sounds\Time\Recording25.mp3" />
+    <Content Include="sounds\Time\Recording26.mp3" />
+    <Content Include="sounds\Time\Recording27.mp3" />
+    <Content Include="sounds\Transportation\Recording01.mp3" />
+    <Content Include="sounds\Transportation\Recording02.mp3" />
+    <Content Include="sounds\Transportation\Recording03.mp3" />
+    <Content Include="sounds\Transportation\Recording04.mp3" />
+    <Content Include="sounds\Transportation\Recording05.mp3" />
+    <Content Include="sounds\Transportation\Recording06.mp3" />
+    <Content Include="sounds\Transportation\Recording07.mp3" />
+    <Content Include="sounds\Transportation\Recording08.mp3" />
+    <Content Include="sounds\Transportation\Recording09.mp3" />
+    <Content Include="sounds\Transportation\Recording10.mp3" />
+    <Content Include="sounds\Transportation\Recording11.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations638.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations639.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations640.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations641.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations642.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations643.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations644.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations645.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations646.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations647.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations648.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations649.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations650.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations651.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations652.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations653.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations654.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations655.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations656.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations657.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations658.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations659.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations660.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations661.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations662.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations663.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations664.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations665.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations666.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations667.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations668.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations669.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations670.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations671.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations672.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations673.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations674.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations675.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations676.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations677.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations678.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations679.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations680.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations681.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations682.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations683.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations684.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations685.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations686.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations687.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations688.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations689.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations690.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations691.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations692.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations693.mp3" />
+    <Content Include="sounds\TwoConsonantCombinations\TwoConsonantCombinations694.mp3" />
+    <Content Include="sounds\UsefulWord\Recording01.mp3" />
+    <Content Include="sounds\UsefulWord\Recording02.mp3" />
+    <Content Include="sounds\UsefulWord\Recording03.mp3" />
+    <Content Include="sounds\UsefulWord\Recording04.mp3" />
+    <Content Include="sounds\UsefulWord\Recording05.mp3" />
+    <Content Include="sounds\UsefulWord\Recording06.mp3" />
+    <Content Include="sounds\UsefulWord\Recording07.mp3" />
+    <Content Include="sounds\UsefulWord\Recording08.mp3" />
+    <Content Include="sounds\UsefulWord\Recording09.mp3" />
+    <Content Include="sounds\UsefulWord\Recording10.mp3" />
+    <Content Include="sounds\UsefulWord\Recording11.mp3" />
+    <Content Include="sounds\UsefulWord\Recording12.mp3" />
+    <Content Include="sounds\UsefulWord\Recording13.mp3" />
+    <Content Include="sounds\UsefulWord\Recording14.mp3" />
+    <Content Include="sounds\UsefulWord\Recording15.mp3" />
+    <Content Include="sounds\UsefulWord\Recording16.mp3" />
+    <Content Include="sounds\UsefulWord\Recording17.mp3" />
+    <Content Include="sounds\UsefulWord\Recording18.mp3" />
+    <Content Include="sounds\UsefulWord\Recording19.mp3" />
+    <Content Include="sounds\UsefulWord\Recording20.mp3" />
+    <Content Include="sounds\UsefulWord\Recording21.mp3" />
+    <Content Include="sounds\UsefulWord\Recording22.mp3" />
+    <Content Include="sounds\UsefulWord\Recording23.mp3" />
+    <Content Include="sounds\UsefulWord\Recording24.mp3" />
+    <Content Include="sounds\UsefulWord\Recording25.mp3" />
+    <Content Include="sounds\UsefulWord\Recording26.mp3" />
+    <Content Include="sounds\UsefulWord\Recording27.mp3" />
+    <Content Include="sounds\UsefulWord\Recording28.mp3" />
+    <Content Include="sounds\UsefulWord\Recording29.mp3" />
+    <Content Include="sounds\UsefulWord\Recording30.mp3" />
+    <Content Include="sounds\UsefulWord\Recording31.mp3" />
+    <Content Include="sounds\UsefulWord\Recording32.mp3" />
+    <Content Include="sounds\UsefulWord\Recording33.mp3" />
+    <Content Include="sounds\UsefulWord\Recording34.mp3" />
+    <Content Include="sounds\UsefulWord\Recording35.mp3" />
+    <Content Include="sounds\UsefulWord\Recording36.mp3" />
+    <Content Include="sounds\UsefulWord\Recording37.mp3" />
+    <Content Include="sounds\UsefulWord\Recording38.mp3" />
+    <Content Include="sounds\UsefulWord\Recording39.mp3" />
+    <Content Include="sounds\UsefulWord\Recording40.mp3" />
+    <Content Include="sounds\UsefulWord\Recording41.mp3" />
+    <Content Include="sounds\UsefulWord\Recording42.mp3" />
+    <Content Include="sounds\UsefulWord\Recording43.mp3" />
+    <Content Include="sounds\UsefulWord\Recording44.mp3" />
+    <Content Include="sounds\UsefulWord\Recording45.mp3" />
+    <Content Include="sounds\UsefulWord\Recording46.mp3" />
+    <Content Include="sounds\UsefulWord\Recording47.mp3" />
+    <Content Include="sounds\UsefulWord\Recording48.mp3" />
+    <Content Include="sounds\UsefulWord\Recording49.mp3" />
+    <Content Include="sounds\UsefulWord\Recording50.mp3" />
+    <Content Include="sounds\UsefulWord\Recording51.mp3" />
+    <Content Include="sounds\UsefulWord\Recording52.mp3" />
+    <Content Include="sounds\UsefulWord\Recording53.mp3" />
+    <Content Include="sounds\UsefulWord\Recording54.mp3" />
+    <Content Include="sounds\UsefulWord\Recording55.mp3" />
+    <Content Include="sounds\UsefulWord\Recording56.mp3" />
+    <Content Include="sounds\UsefulWord\Recording57.mp3" />
+    <Content Include="sounds\UsefulWord\Recording58.mp3" />
+    <Content Include="sounds\UsefulWord\Recording59.mp3" />
+    <Content Include="sounds\UsefulWord\Recording60.mp3" />
+    <Content Include="sounds\UsefulWord\Recording61.mp3" />
+    <Content Include="sounds\UsefulWord\Recording62.mp3" />
+    <Content Include="sounds\UsefulWord\Recording63.mp3" />
+    <Content Include="sounds\UsefulWord\Recording64.mp3" />
+    <Content Include="sounds\UsefulWord\Recording65.mp3" />
+    <Content Include="sounds\UsefulWord\Recording66.mp3" />
+    <Content Include="sounds\UsefulWord\Recording67.mp3" />
+    <Content Include="sounds\UsefulWord\Recording68.mp3" />
+    <Content Include="sounds\UsefulWord\Recording69.mp3" />
+    <Content Include="sounds\UsefulWord\Recording70.mp3" />
+    <Content Include="sounds\UsefulWord\Recording71.mp3" />
+    <Content Include="sounds\UsefulWord\Recording72.mp3" />
+    <Content Include="sounds\UsefulWord\Recording73.mp3" />
+    <Content Include="sounds\UsefulWord\Recording74.mp3" />
+    <Content Include="sounds\Verbs\Verbs769.mp3" />
+    <Content Include="sounds\Verbs\Verbs770.mp3" />
+    <Content Include="sounds\Verbs\Verbs771.mp3" />
+    <Content Include="sounds\Verbs\Verbs772.mp3" />
+    <Content Include="sounds\Verbs\Verbs773.mp3" />
+    <Content Include="sounds\Verbs\Verbs774.mp3" />
+    <Content Include="sounds\Verbs\Verbs775.mp3" />
+    <Content Include="sounds\Verbs\Verbs776.mp3" />
+    <Content Include="sounds\Verbs\Verbs777.mp3" />
+    <Content Include="sounds\Verbs\Verbs778.mp3" />
+    <Content Include="sounds\Verbs\Verbs779.mp3" />
+    <Content Include="sounds\Verbs\Verbs780.mp3" />
+    <Content Include="sounds\Verbs\Verbs781.mp3" />
+    <Content Include="sounds\Verbs\Verbs782.mp3" />
+    <Content Include="sounds\Verbs\Verbs783.mp3" />
+    <Content Include="sounds\Verbs\Verbs784.mp3" />
+    <Content Include="sounds\Verbs\Verbs785.mp3" />
+    <Content Include="sounds\Verbs\Verbs786.mp3" />
+    <Content Include="sounds\Verbs\Verbs787.mp3" />
+    <Content Include="sounds\Verbs\Verbs788.mp3" />
+    <Content Include="sounds\Verbs\Verbs789.mp3" />
+    <Content Include="sounds\Verbs\Verbs790.mp3" />
+    <Content Include="sounds\Verbs\Verbs791.mp3" />
+    <Content Include="sounds\Verbs\Verbs792.mp3" />
+    <Content Include="sounds\Verbs\Verbs793.mp3" />
+    <Content Include="sounds\Verbs\Verbs794.mp3" />
+    <Content Include="sounds\Verbs\Verbs795.mp3" />
+    <Content Include="sounds\Verbs\Verbs796.mp3" />
+    <Content Include="sounds\Verbs\Verbs797.mp3" />
+    <Content Include="sounds\Verbs\Verbs798.mp3" />
+    <Content Include="sounds\Verbs\Verbs799.mp3" />
+    <Content Include="sounds\Verbs\Verbs800.mp3" />
+    <Content Include="sounds\Verbs\Verbs801.mp3" />
+    <Content Include="sounds\Verbs\Verbs802.mp3" />
+    <Content Include="sounds\Verbs\Verbs803.mp3" />
+    <Content Include="sounds\Verbs\Verbs804.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording01.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording02.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording03.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording04.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording05.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording06.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording07.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording08.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording09.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording10.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording11.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording12.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording13.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording14.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording15.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording16.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording17.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording18.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording19.mp3" />
+    <Content Include="sounds\WeightandMeasures\Recording20.mp3" />
+    <Content Include="sounds\WildAnimal\Recording01.mp3" />
+    <Content Include="sounds\WildAnimal\Recording02.mp3" />
+    <Content Include="sounds\WildAnimal\Recording03.mp3" />
+    <Content Include="sounds\WildAnimal\Recording04.mp3" />
+    <Content Include="sounds\WildAnimal\Recording05.mp3" />
+    <Content Include="sounds\WildAnimal\Recording06.mp3" />
+    <Content Include="sounds\WildAnimal\Recording07.mp3" />
+    <Content Include="sounds\WildAnimal\Recording08.mp3" />
+    <Content Include="sounds\WildAnimal\Recording09.mp3" />
+    <Content Include="sounds\WildAnimal\Recording10.mp3" />
+    <Content Include="sounds\WildAnimal\Recording11.mp3" />
+    <Content Include="sounds\WildAnimal\Recording12.mp3" />
+    <Content Include="sounds\WildAnimal\Recording13.mp3" />
+    <Content Include="sounds\WildAnimal\Recording14.mp3" />
+    <Content Include="sounds\WildAnimal\Recording15.mp3" />
+    <Content Include="sounds\WildAnimal\Recording16.mp3" />
+    <Content Include="sounds\Workers\Recording01.mp3" />
+    <Content Include="sounds\Workers\Recording02.mp3" />
+    <Content Include="sounds\Workers\Recording03.mp3" />
+    <Content Include="sounds\Workers\Recording04.mp3" />
+    <Content Include="sounds\Workers\Recording05.mp3" />
+    <Content Include="sounds\Workers\Recording06.mp3" />
+    <Content Include="sounds\Workers\Recording07.mp3" />
+    <Content Include="sounds\Workers\Recording08.mp3" />
+    <Content Include="sounds\Workers\Recording09.mp3" />
+    <Content Include="sounds\Workers\Recording10.mp3" />
+    <Content Include="sounds\Workers\Recording11.mp3" />
+    <Content Include="sounds\Workers\Recording12.mp3" />
+    <Content Include="sounds\Workers\Recording13.mp3" />
+    <Content Include="sounds\Workers\Recording14.mp3" />
+    <Content Include="sounds\Workers\Recording15.mp3" />
+    <Content Include="sounds\Workers\Recording16.mp3" />
+    <Content Include="sounds\Workers\Recording17.mp3" />
+    <Content Include="sounds\Workers\Recording18.mp3" />
+    <Content Include="sounds\Workers\Recording19.mp3" />
+    <Content Include="sounds\Workers\Recording20.mp3" />
+    <Content Include="sounds\Workers\Recording21.mp3" />
+    <Content Include="sounds\Workers\Recording22.mp3" />
+    <Content Include="sounds\Workers\Recording23.mp3" />
+    <Content Include="sounds\Workers\Recording24.mp3" />
+    <Content Include="sounds\Workers\Recording25.mp3" />
+    <Content Include="sounds\Workers\Recording26.mp3" />
+    <Content Include="sounds\Workers\Recording27.mp3" />
+    <Content Include="sounds\Workers\Recording28.mp3" />
+    <Content Include="sounds\Workers\Recording29.mp3" />
+    <Content Include="sounds\Workers\Recording30.mp3" />
+    <Content Include="sounds\Workers\Recording31.mp3" />
+    <Content Include="sounds\Workers\Recording32.mp3" />
+    <Content Include="sounds\Workers\Recording33.mp3" />
+    <Content Include="sounds\Workers\Recording34.mp3" />
+    <Content Include="sounds\Workers\Recording35.mp3" />
+    <Content Include="sounds\Workers\Recording36.mp3" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Words\Create.cshtml" />
+    <Content Include="Views\Words\Delete.cshtml" />
+    <Content Include="Views\Words\Details.cshtml" />
+    <Content Include="Views\Words\Edit.cshtml" />
+    <Content Include="Views\Words\Index.cshtml" />
+    <Content Include="Views\Words\list.cshtml" />
+    <Content Include="Views\Home\NewsPaper.cshtml" />
+    <Content Include="Views\Home\Books.cshtml" />
+    <Content Include="Views\Home\Videos.cshtml" />
+    <Content Include="Views\Home\Teachers.cshtml" />
+    <Content Include="Views\Words\Search.cshtml" />
+    <Content Include="Views\Home\Music.cshtml" />
+    <Content Include="Views\NewsPapers\Create.cshtml" />
+    <Content Include="Views\NewsPapers\Delete.cshtml" />
+    <Content Include="Views\NewsPapers\Details.cshtml" />
+    <Content Include="Views\NewsPapers\Edit.cshtml" />
+    <Content Include="Views\NewsPapers\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginRight.cshtml" />
+    <Content Include="Views\NewsPapers\list.cshtml" />
+    <Content Include="Views\Newsletters\Create.cshtml" />
+    <Content Include="Views\Newsletters\Delete.cshtml" />
+    <Content Include="Views\Newsletters\Details.cshtml" />
+    <Content Include="Views\Newsletters\Edit.cshtml" />
+    <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Views\Home\Demo.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\WordUsers\Create.cshtml" />
+    <Content Include="Views\WordUsers\Delete.cshtml" />
+    <Content Include="Views\WordUsers\Details.cshtml" />
+    <Content Include="Views\WordUsers\Edit.cshtml" />
+    <Content Include="Views\WordUsers\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wps.Domain\Wps.Domain.csproj">
+      <Project>{fa5234a7-3e4c-4078-95bf-8979c0deb199}</Project>
+      <Name>Wps.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54636</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54636/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

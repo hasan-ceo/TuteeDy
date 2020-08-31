@@ -1,0 +1,110 @@
+﻿@model Wps.WebUI.Models.WordViewModel
+@section metatags
+{
+    @*<meta name="description" content="Word Power Swahili is suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. It’s help you to communicate with locals for your daily activities." />
+        <meta name="robots" content="noodp" />*@
+    <link rel="canonical" href="@ViewBag.titlefull" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewBag.CategoryName - Word Power Swahili" />
+    <meta property="og:description" content="Word Power Swahili is suitable for tourist visiting Southeast Africa, including Tanzania, Kenya, Uganda, Rwanda, Burundi, Mozambique and the Democratic Republic of Congo. It’s help you to communicate with locals for your daily activities." />
+    <meta property="og:url" content="@ViewBag.titlefull" />
+    <meta property="og:site_name" content="Word Power Swahili" />
+    <meta property="og:image" content="http://www.wordpowerswahili.org/images/banner.jpg" />
+    <meta property="fb:app_id" content="246107605737575" />
+    <meta property="og:locale:alternate" content="en_US" />
+}
+@{
+    ViewBag.Title = @ViewBag.CategoryName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron" style="background-color:#535676;color:white;margin:0px">
+    <div class="row">
+        <div class="col-md-24" style="padding:10px">
+            <img src="@Url.Content(ViewBag.CategoryIDs)" alt="@ViewBag.CategoryName" class="img-responsive pull-left" style="padding-right:20px">
+
+            <h1 style="color:white;">@ViewBag.CategoryName</h1>
+        </div>
+
+    </div>
+</div>
+
+<div class="row" style="margin:0px;background-color:#f49d81">
+    <div class="col-md-6" style="padding-top:10px;padding-bottom:25px">
+        @foreach (var item in Model.Categories)
+        {
+            <div class="col-md-24">
+                @{ var sr = "~/images/" + @item.CategoryID + ".png";}
+                <a href="/words/list/@item.CategoryID" class="btn btn-danger" style="width:100%">
+                    <img src="@Url.Content(sr)" alt="@item.CategoryName" class="img-responsive pull-left">
+                    <h3 style="white-space:pre-wrap;"> @item.CategoryName</h3>
+                </a>
+            </div>
+                    }
+
+        <div class="col-md-24" style="margin-top:18px">
+            <a href="/Home/Books">  <img src="~/images/Books.png" alt="Top 32 Books on Swahili" class="img-thumbnail center-block " /></a>
+        </div>
+        <div class="col-md-24" style="margin-top:10px">
+            <a href="/Home/Videos">   <img src="~/images/Videos.png" alt="Top Videos on Swahili" class="img-thumbnail center-block" /></a>
+        </div>
+    </div>
+
+    <div class="col-md-18">
+
+        <table class="table table-striped table-bordered table-responsive">
+            <tr style="font-size:2em">
+                <th>
+                    English
+                </th>
+                <th>
+                    Swahili
+                </th>
+                <th>
+                    Sound
+                </th>
+            </tr>
+
+            @foreach (var item in Model.tmpWords)
+                            {
+                            <tr style="font-size:1.5em">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.English)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Swahili)
+                                </td>
+                                <td>
+
+                                    <audio controls preload="none" id="@item.Sound" style="width:100%">
+                                        @{
+                                                var srcf = "~/sounds/" + item.CategoryID + "/" + item.Sound + ".mp3";
+
+                                            <source src=@Url.Content(srcf) type="video/mp4" />
+                                        }
+                                    </audio>
+                                    @*@{
+                                            var srcf1 = "~/sounds/" + item.CategoryID + "/" + item.Sound + ".mp3";
+
+
+
+                                        <button onclick="playAudio(@Url.Content(srcf1));"><img src=@Url.Content("/images/sound.png") width="45" height="45" /></button>
+                                        }*@
+                                </td>
+
+                            </tr>
+                                                }
+
+        </table>
+
+    </div>
+
+
+    <div class="col-md-24">
+        <div class="fb-comments" data-href="@ViewBag.titlefull" data-width="100%" data-numposts="20"></div>
+    </div>
+</div>
+
+

@@ -1,0 +1,76 @@
+﻿<footer>
+    <div class="container body-content">
+
+        @*Bootom Header Start*@
+        <div class="row" style="background-color:#535676;margin:0px">
+            <div class="col-md-8" style="padding:10px">
+                <div class="col-md-24">
+                    <img src="~/images/Present-icon.png" alt="" class="img-circle img-thumbnail center-block">
+                </div>
+
+                <div class="col-md-24" style="text-align:center;color:white">
+                    <h4>Wanna Help?</h4>
+                    <p style="white-space:pre-wrap;font-size :12px">Word Power Swahili is free tool, but if you would like to encourage its development please consider making a donation.</p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="62TPXMXCHBNPE">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="col-md-8" style="padding-top:100px;text-align:center;padding-left:50px">
+                
+
+
+                @using (Html.BeginForm("Newjoin", "Newsletters", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="col-md-offset-4 col-md-16">
+                        <input class="input-lg form-control" id="Name" name="Name" placeholder="Enter Name" style="width:100%;" value="" type="text">
+                    </div>
+                    <div class="col-md-offset-4 col-md-16">
+                        <input class="input-lg form-control" id="Email" name="Email" placeholder="Enter email" style="width:100%;" value="" type="email">
+                    </div>
+
+                    <div class="col-md-offset-4 col-md-16">
+                        <input type="submit" value="Get Newsletter" class="btn btn-success btn-lg" name="NewsletterButton" id="Newsletter" style="background-color:#f59c81; width:100%" />
+
+                    </div>
+
+                }
+
+            </div>
+
+
+            <div class="col-md-8" style="padding:10px;">
+
+                <div class="fb-page" data-href="https://www.facebook.com/wordpowerswahili" data-tabs="timeline" data-width="500" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/wordpowerswahili"><a href="https://www.facebook.com/wordpowerswahili">Word Power Swahili</a></blockquote></div></div>
+
+
+
+            </div>
+        </div>
+
+        @*Bootom Header End*@
+
+
+
+
+
+
+        <div class="row" style="margin:0px">
+            <div class="col-md-24" style="background-color:#535676;padding:10px;text-align:center">
+                <hr />
+                
+                    <h6><strong>Developed by <a href="http://www.azmainventures.com" style="color:#ff6038">Azmain Ventures</a></strong></h6>
+              
+            </div>
+        </div>
+    </div>
+
+</footer>
